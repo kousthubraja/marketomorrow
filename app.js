@@ -20,6 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
+app.use("/nifty-prediction/stylesheets", express.static(path.join(__dirname, 'public/stylesheets')));
+app.use("/nifty-prediction/images", express.static(path.join(__dirname, 'public/images')));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404, 'Invalid path'));
