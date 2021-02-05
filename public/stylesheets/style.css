@@ -84,11 +84,12 @@ a {
     /*justify-content: center;*/
     /*align-items: center;        !* for single line flex container *!*/
     /*align-content: center;      !* for multi-line flex container *!*/
+    text-align: center;
 }
 
 .box2 {
-    /*display: flex;*/
-    /*justify-content: center;*/
+    display: flex;
+    justify-content: center;
     /*align-items: center;        !* for single line flex container *!*/
     /*align-content: center;      !* for multi-line flex container *!*/
 }
