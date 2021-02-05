@@ -7,12 +7,13 @@ html {
 body {
   height: 100%;
   margin:0; 
-  padding:0; 
-  font: 4em "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding:00; 
 }
 
 .full-height {
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 a {
@@ -23,10 +24,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px;
+  font: 4em "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 .powered-by {
   position: absolute;
   bottom: 2vh;
   right: 2vh;
+  display: flex;
+  align-items: center;
 }
