@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
+const myAPI = require('./api');
 
 /* GET home page. */
 router.get('/nifty-prediction', function(req, res, next) {
-  // res.render('index', { color: '#00b44c' });
-  res.render('index', { color: '#b41200' });
+  // res.render('index', data);
+  // res.render('index', data);
+  myAPI.getNiftyPrediction(req,res)
 });
 
 module.exports = router;

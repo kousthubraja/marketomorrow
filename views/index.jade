@@ -1,9 +1,5 @@
 extends layout
-
 block content
-  //- h1= title
-  //- p Welcome to #{title}
-  //- div(class="main-content")
   div(class="center")
     a(href="https://asqisys.com")
       img(src="images/asqi-logo.png",class="img-class")
@@ -12,9 +8,9 @@ block content
       div(class="vertical-flex")
         div(class="box")
           span(class="text-header") One month forecast for Nifty&nbsp;
-          span(class) 13454.5
+          span(class) #{predictedValue}
         //div(class="box2") 13454.5
-        div(class="box2")(style="color:"+color) -1486.2 (9.9%)
+        div(class="box2")(style="color:"+color) #{difference} (#{predictedChange}%)
   div(class="footer")
     div(class="row-flex")
       div(class="img_cap")
