@@ -103,6 +103,17 @@ a {
 .text-header{
     font-weight: bold;
 }
+.caption{
+    font-size: small;
+    display: block;
+
+}
+.img_cap{
+    vertical-align: bottom;
+    display: inline-block;
+    text-align: center;
+    /*width: 120px;*/
+}
 
 @media (max-width: 1000px) {
     .img-class {
