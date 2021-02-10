@@ -6,17 +6,26 @@ module.exports = {
             if (err) {
                 return console.log(err);
             }
-            let data=body;
-            data['predictedChange']=data['predictedChange'].toFixed(1);
-            data['predictedValue']=data['predictedValue'].toFixed(1);
-            data['difference']=data['difference'].toFixed(1);
-            if(data['predictedChange']<0)
-                data.color='#b41200'
-            else
-                data.color='#00b44c'
-            // console.log(data)
-            // return data;
+            let data = processData(body);
             inc_response.render('index', data);
         });
+
+        function processData(body) {
+            let data = body;
+            data['predictedChange'] = data['predictedChange'].toFixed(1);
+            data['predictedValue'] = data['predictedValue'].toFixed(0);
+            data['difference'] = data['difference'].toFixed(0);
+            if (data['predictedChange'] < 0)
+                data.color = '#b41200'
+            else
+                data.color = '#00b44c'
+            data['createdDateTime'] = (new Date(data['createdDateTime'])).toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            }).split(' ').join(' ');
+            console.log(data)
+            return data;
+        }
     }
 }

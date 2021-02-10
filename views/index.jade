@@ -6,11 +6,12 @@ block content
   div(class="full-height")
     div(class="main-content")
       div(class="vertical-flex")
+        div(class="powered-by") Latest as of #{createdDateTime}
         div(class="box")
-          span(class="text-header") One month forecast for Nifty&nbsp;
-          span(class) #{predictedValue}
-        //div(class="box2") 13454.5
-        div(class="box2")(style="color:"+color) #{difference} (#{predictedChange}%)
+          span(class) One month forecast for NIFTY
+        div(class="box")
+          span(class="text-header") #{predictedValue}
+        div(class="box2")(style="color:"+color) (#{predictedChange}%)
   div(class="footer")
     div(class="row-flex")
       div(class="img_cap")
