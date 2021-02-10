@@ -16,9 +16,9 @@ module.exports = {
             data['predictedValue'] = data['predictedValue'].toFixed(0);
             data['difference'] = data['difference'].toFixed(0);
             if (data['predictedChange'] < 0)
-                data.color = '#b41200'
+                data.color = '#d93025'
             else
-                data.color = '#00b44c'
+                data.color = '#34a853'
             data['createdDateTime'] = (new Date(data['createdDateTime'])).toLocaleDateString('en-GB', {
                 day: 'numeric',
                 month: 'long',
