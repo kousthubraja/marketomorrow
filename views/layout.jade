@@ -18,6 +18,43 @@ html
     meta(property='twitter:title', content='Nifty one month from now: '+predictedValue)
     meta(property='twitter:description', content='AI Driven NIFTY Prediction Engine (Daily Updates)')
     meta(property='twitter:image', content='https://asqisys.com/nifty-prediction/images/metaimage.png')
+    script.
+      window.intercomSettings = {
+        app_id: "pb7f3jh5"
+      };
+    script.
+      // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/pb7f3jh5'
+      (function () {
+        var w = window;
+        var ic = w.Intercom;
+        if (typeof ic === "function") {
+          ic('reattach_activator');
+          ic('update', w.intercomSettings);
+        } else {
+          var d = document;
+          var i = function () {
+            i.c(arguments);
+          };
+          i.q = [];
+          i.c = function (args) {
+            i.q.push(args);
+          };
+          w.Intercom = i;
+          var l = function () {
+            var s = d.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://widget.intercom.io/widget/pb7f3jh5';
+            var x = d.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+          };
+          if (w.attachEvent) {
+            w.attachEvent('onload', l);
+          } else {
+            w.addEventListener('load', l, false);
+          }
+        }
+      })();
     script(async='', src='https://www.googletagmanager.com/gtag/js?id=G-ZQK1K9DKSR')
     script.
       window.dataLayer = window.dataLayer || [];
