@@ -183,6 +183,17 @@ a {
         justify-content: space-evenly;
         margin: auto;
     }
+    .row-flex2 > div{
+        flex: 1 0 fit-content;
+    }
+    .padding{
+        /*margin-top: 20px;*/
+        /*margin-bottom:  20px;*/
+    }
+
+    .button{
+        font-size: 29px!important;
+    }
 
     .row-flex {
         width: 80%;
