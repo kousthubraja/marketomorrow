@@ -12,7 +12,12 @@ block content
         div(class="box")
           span(class="text-header") #{predictedValue}
         div(class="box2")(style="color:"+color) (#{predictedChange}%)
-  div(class="footer")
+    div(id='buttonRow' class="row-flex2 successfully-saved")
+      button.btn.btn-primary.btn-lg(class='button' type='button' id='option1') Interesting
+      button.btn.btn-primary.btn-lg(class='button' type='button' id='option2') I Agree
+      button.btn.btn-primary.btn-lg(class='button' type='button' id='option3') I Don't Agree
+      button.btn.btn-primary.btn-lg(class='button' type='button' id='option4') You Guys Are Stupid
+  //div(class="footer")
     div(class="row-flex")
       div(class="img_cap")
         a(href="https://asqisys.com/fundsage")(target='_blank')
@@ -26,3 +31,9 @@ block content
         a(href="https://www.leadingedge.asqisys.com/")(target='_blank')
           img(src="images/blog.png",class="img-class2")
           span(class="caption") LEADING EDGE
+  script.
+    document.getElementById('option1').onclick = handleInput;
+    document.getElementById('option2').onclick = handleInput;
+    document.getElementById('option3').onclick = handleInput;
+    document.getElementById('option4').onclick = handleInput;
+

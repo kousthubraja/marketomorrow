@@ -79,6 +79,13 @@ a {
     margin: auto;
 }
 
+.row-flex2 {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+}
 .box {
     /*display: flex;*/
     /*justify-content: center;*/
@@ -122,6 +129,24 @@ a {
     align-items: center;
     font-size: 20%;
 }
+.button{
+    background-color:#0e4476!important;
+}
+
+.successfully-saved.hide-opacity{
+    opacity: 0;
+}
+
+.successfully-saved {
+    color: #FFFFFF;
+    text-align: center;
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
 
 @media (max-width: 1000px) {
     .img-class {
@@ -150,12 +175,34 @@ a {
         height: 10vh;
     }
 
+    .row-flex2 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: auto;
+    }
+
     .row-flex {
         width: 80%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         margin: auto;
+    }
+
+
+    .main-content {
+        display: flex;
+        height: 100%;
+        /*min-height: 400px;*/
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        /*padding: 50px 50px 50px 50px;*/
+        font: 1000% "Lucida Grande", Helvetica, Arial, sans-serif;
     }
 
 }

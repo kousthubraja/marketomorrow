@@ -3,6 +3,8 @@ html
   head
     title= 'Nifty Prediction - By ASQI Advisors'
     link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    script(src='https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/production.min.js')
     title Nifty Prediction - By ASQI Advisors
     meta(name='title', content='Nifty one month from now: '+predictedValue)
     meta(name='description', content='AI Driven NIFTY Prediction Engine (Daily Updates)')
@@ -64,4 +66,32 @@ html
       gtag('js', new Date());
       gtag('config', 'G-ZQK1K9DKSR');
   body
+    script.
+      let handleInput = function () {
+        dataKey={
+          option1:"INT",
+          option2:"AGR",
+          option3:"DGR",
+          option4:"YGS",
+        }
+        let aleph=dataKey[this.id];
+        getIPs().then(res =>
+        {
+          let capturedData={
+            IP:res
+          };
+          let xhr = new XMLHttpRequest();
+          xhr.open("POST", 'https://www.asqisys.com/backend/api/postNiftyOpinion', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify({
+            opinion: aleph,
+            data: capturedData,
+          }));
+          // alert(aleph+':'+res)
+          let element = document.getElementById("buttonRow");
+          element.classList.add("hide-opacity");
+        }
+        )
+
+      }
     block content
