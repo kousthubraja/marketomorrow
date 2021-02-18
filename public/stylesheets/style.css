@@ -184,7 +184,8 @@ a {
         margin: auto;
     }
     .row-flex2 > div{
-        flex: 1 0 fit-content;
+        margin: 1em 0;
+
     }
     .padding{
         /*margin-top: 20px;*/
