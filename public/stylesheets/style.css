@@ -104,7 +104,7 @@ a {
 .footer {
     position: absolute;
     bottom: 0;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     width: 100%;
 }
 .text-header{
