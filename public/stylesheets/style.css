@@ -147,7 +147,22 @@ a {
     -o-transition: opacity 1s ease-in-out;
     opacity: 1;
 }
-
+/*.toastClass{*/
+/*    top:0px;*/
+/*}*/
+#toast-container{
+    top:5px!important;
+    right:5px!important;
+    left: auto!important;
+}
+.email{
+    width: 60%!important;
+    color:white;
+}
+.toastLink{
+    float: right;
+    margin-top: auto;
+}
 @media (max-width: 1000px) {
     .img-class {
         width: 250px;

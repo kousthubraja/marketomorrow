@@ -1,99 +1,134 @@
 doctype html
 html
-  head
-    title= 'Nifty Prediction - By ASQI Advisors'
-    link(rel='stylesheet', href='stylesheets/style.css')
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
-    script(src='https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/production.min.js')
-    title Nifty Prediction - By ASQI Advisors
-    meta(name='title', content='Nifty one month from now: '+predictedValue)
-    meta(name='description', content='AI Driven NIFTY Prediction Engine (Daily Updates)')
-    // Open Graph / Facebook
-    meta(property='og:type', content='website')
-    meta(property='og:url', content='https://www.asqisys.com/nifty-prediction/')
-    meta(property='og:title', content='Nifty one month from now: '+predictedValue)
-    meta(property='og:description', content='AI Driven NIFTY Prediction Engine (Daily Updates)')
-    meta(property='og:image', content='https://asqisys.com/nifty-prediction/images/metaimage.png')
-    // Twitter
-    meta(property='twitter:card', content='summary_large_image')
-    meta(property='twitter:url', content='https://www.asqisys.com/nifty-prediction/')
-    meta(property='twitter:title', content='Nifty one month from now: '+predictedValue)
-    meta(property='twitter:description', content='AI Driven NIFTY Prediction Engine (Daily Updates)')
-    meta(property='twitter:image', content='https://asqisys.com/nifty-prediction/images/metaimage.png')
-    script.
-      window.intercomSettings = {
-        app_id: "pb7f3jh5"
-      };
-    script.
-      // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/pb7f3jh5'
-      (function () {
-        var w = window;
-        var ic = w.Intercom;
-        if (typeof ic === "function") {
-          ic('reattach_activator');
-          ic('update', w.intercomSettings);
-        } else {
-          var d = document;
-          var i = function () {
-            i.c(arguments);
-          };
-          i.q = [];
-          i.c = function (args) {
-            i.q.push(args);
-          };
-          w.Intercom = i;
-          var l = function () {
-            var s = d.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = 'https://widget.intercom.io/widget/pb7f3jh5';
-            var x = d.getElementsByTagName('script')[0];
-            x.parentNode.insertBefore(s, x);
-          };
-          if (w.attachEvent) {
-            w.attachEvent('onload', l);
-          } else {
-            w.addEventListener('load', l, false);
-          }
-        }
-      })();
-    script(async='', src='https://www.googletagmanager.com/gtag/js?id=G-ZQK1K9DKSR')
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-ZQK1K9DKSR');
-  body
-    script.
-      let handleInput = function () {
-        dataKey={
-          option1:"INT",
-          option2:"AGR",
-          option3:"DGR",
-          option4:"YGS",
-        }
-        let aleph=dataKey[this.id];
-        getIPs().then(res =>
-        {
-          let capturedData={
-            IP:res
-          };
-          let xhr = new XMLHttpRequest();
-          xhr.open("POST", 'https://www.asqisys.com/backend/api/postNiftyOpinion', true);
-          xhr.setRequestHeader('Content-Type', 'application/json');
-          xhr.send(JSON.stringify({
-            opinion: aleph,
-            data: capturedData,
-          }));
-          // alert(aleph+':'+res)
-          let element = document.getElementById("buttonRow");
-          element.classList.add("hide-opacity");
-          window.open('https://forms.gle/xBpinjVrdPtmiBAM6', '_blank');
+    head
+        title= 'Nifty Prediction - By ASQI Advisors'
+        link(rel='stylesheet', href='stylesheets/style.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+        link(rel='icon', type='image/png', href='images/favicon.png', sizes='32x32')
+        script(src='https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/production.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+        title Nifty Prediction - By ASQI Advisors
+        meta(name='title', content='Nifty one month from now: ' + predictedValue)
+        meta(name='description', content='AI Driven NIFTY Prediction Engine (Daily Updates)')
+        // Open Graph / Facebook
+        meta(property='og:type', content='website')
+        meta(property='og:url', content='https://www.asqisys.com/nifty-prediction/')
+        meta(property='og:title', content='Nifty one month from now: ' + predictedValue)
+        meta(property='og:description', content='AI Driven NIFTY Prediction Engine (Daily Updates)')
+        meta(property='og:image', content='https://asqisys.com/nifty-prediction/images/metaimage.png')
+        // Twitter
+        meta(property='twitter:card', content='summary_large_image')
+        meta(property='twitter:url', content='https://www.asqisys.com/nifty-prediction/')
+        meta(property='twitter:title', content='Nifty one month from now: ' + predictedValue)
+        meta(property='twitter:description', content='AI Driven NIFTY Prediction Engine (Daily Updates)')
+        meta(property='twitter:image', content='https://asqisys.com/nifty-prediction/images/metaimage.png')
+        script.
+            window.intercomSettings = {
+                app_id: "pb7f3jh5"
+            };
+        script.
+            // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/pb7f3jh5'
+            (function () {
+                var w = window;
+                var ic = w.Intercom;
+                if (typeof ic === "function") {
+                    ic('reattach_activator');
+                    ic('update', w.intercomSettings);
+                } else {
+                    var d = document;
+                    var i = function () {
+                        i.c(arguments);
+                    };
+                    i.q = [];
+                    i.c = function (args) {
+                        i.q.push(args);
+                    };
+                    w.Intercom = i;
+                    var l = function () {
+                        var s = d.createElement('script');
+                        s.type = 'text/javascript';
+                        s.async = true;
+                        s.src = 'https://widget.intercom.io/widget/pb7f3jh5';
+                        var x = d.getElementsByTagName('script')[0];
+                        x.parentNode.insertBefore(s, x);
+                    };
+                    if (w.attachEvent) {
+                        w.attachEvent('onload', l);
+                    } else {
+                        w.addEventListener('load', l, false);
+                    }
+                }
+            })();
+        script(async='', src='https://www.googletagmanager.com/gtag/js?id=G-ZQK1K9DKSR')
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-ZQK1K9DKSR');
+    body
+        script.
+            function dismissToast() {
+                M.Toast.dismissAll();
+            };
+            function sendPostQuery(email, type) {
+                getIPs().then(res => {
+                        let capturedData = {
+                            IP: res,
+                            type: type
+                        };
+                        let data = {
+                            email: email,
+                            data: capturedData,
+                        };
+                        sendPOST('https://www.asqisys.com/backend/api/postEmailAddress', data)
+                        // alert(aleph+':'+res)
+                    }
+                )
 
-        }
-        )
+            };
+            function sendPOST(url, data) {
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", url, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify(data));
+            };
+            let handleInput = function () {
+                dataKey = {
+                    option1: "INT",
+                    option2: "AGR",
+                    option3: "DGR",
+                    option4: "YGS",
+                }
+                let aleph = dataKey[this.id];
+                getIPs().then(res => {
+                        let capturedData = {
+                            IP: res
+                        };
+                        let data = {
+                            opinion: aleph,
+                            data: capturedData,
+                        };
+                        sendPOST('https://www.asqisys.com/backend/api/postNiftyOpinion', data);
+                        // alert(aleph+':'+res)
+                        let element = document.getElementById("buttonRow");
+                        element.classList.add("hide-opacity");
+                        M.toast({html: toastHTML2, displayLength: Infinity, classes: 'toastClass'})
 
-      }
-    block content
+                    }
+                )
+            }
+            function submitDismiss(type) {
+                if (!document.getElementById("email" + type).validity.valid) {
+                    return
+                }
+                aleph = document.getElementById("email" + type).value;
+                //send Post query
+                if (parseInt(type) === 1)
+                    sendPostQuery(aleph, "Detailed Analysis")
+                if (parseInt(type) === 2)
+                    sendPostQuery(aleph, "Responses")
+                dismissToast()
+            }
+        block content
