@@ -62,7 +62,7 @@ a {
     align-items: center;
     width: 100%;
     /*padding: 50px 50px 50px 50px;*/
-    font: 500% "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 350% "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .vertical-flex {
@@ -222,14 +222,14 @@ a {
 
     .main-content {
         display: flex;
-        height: 80%;
+        height: 90%;
         /*min-height: 400px;*/
         justify-content: center;
         flex-direction: column;
         align-items: center;
         width: 100%;
         /*padding: 50px 50px 50px 50px;*/
-        font: 7vh "Lucida Grande", Helvetica, Arial, sans-serif;
+        font: 5vh "Lucida Grande", Helvetica, Arial, sans-serif;
     }
 
 }

@@ -8,7 +8,11 @@ block content
             div(class="vertical-flex")
                 div(class="powered-by") Latest as of #{createdDateTime}
                 div(class="box")
-                    span(class) One month forecast for NIFTY
+                    span(class) Nifty Index Value for #{previousDateTime}
+                div(class="box")
+                    span(class="text-header") #{indexValue}
+                div(class="box")
+                    span(class) Forecasted Value for  #{futureDateTime}
                 div(class="box")
                     span(class="text-header") #{predictedValue}
                 div(class="box2")(style="color:" + color) (#{predictedChange}%)

@@ -11,7 +11,9 @@ module.exports = {
         });
 
         function processData(body) {
+            var day = 60 * 60 * 24 * 1000;
             let data = body;
+            data['indexValue']=(data['predictedValue']-data['difference']).toFixed(1)
             data['predictedChange'] = data['predictedChange'].toFixed(1);
             data['predictedValue'] = data['predictedValue'].toFixed(0);
             data['difference'] = data['difference'].toFixed(0);
@@ -19,7 +21,20 @@ module.exports = {
                 data.color = '#d93025'
             else
                 data.color = '#34a853'
+            let currentDate=new Date(data['createdDateTime'])
+            let previousDate= new Date(currentDate.getTime()-(day*1))
+            currentDate.setMonth(currentDate.getMonth()+1)
             data['createdDateTime'] = (new Date(data['createdDateTime'])).toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            }).split(' ').join(' ');
+            data['previousDateTime'] = (previousDate).toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            }).split(' ').join(' ');
+            data['futureDateTime'] = (currentDate).toLocaleDateString('en-GB', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric'
