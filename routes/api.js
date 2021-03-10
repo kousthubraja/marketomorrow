@@ -13,7 +13,7 @@ module.exports = {
         function processData(body) {
             var day = 60 * 60 * 24 * 1000;
             let data = body;
-            data['indexValue']=(data['predictedValue']-data['difference']).toFixed(1)
+            data['indexValue']=(data['predictedValue']-data['difference']).toFixed(0)
             data['predictedChange'] = data['predictedChange'].toFixed(1);
             data['predictedValue'] = data['predictedValue'].toFixed(0);
             data['difference'] = data['difference'].toFixed(0);
