@@ -8,12 +8,12 @@ block content
             div(class="vertical-flex")
                 div(class="powered-by") Latest as of #{createdDateTime}
                 div(class="box")
-                    span(class) Nifty Index Value for #{previousDateTime}
-                div(class="box")
+                    span(class="smallText") Nifty Index Value for #{previousDateTime}
+                    br
                     span(class="text-header") #{indexValue}
-                div(class="box")
-                    span(class) Forecasted Value for  #{futureDateTime}
-                div(class="box")
+                div(class="box mt")
+                    span(class="smallText") Forecasted Value for  #{futureDateTime}
+                    br
                     span(class="text-header") #{predictedValue}
                 div(class="box2")(style="color:" + color) (#{predictedChange}%)
         div(id='buttonRow' class="row-flex2 successfully-saved")

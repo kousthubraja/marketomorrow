@@ -64,6 +64,9 @@ a {
     /*padding: 50px 50px 50px 50px;*/
     font: 350% "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+.smallText{
+    font: 80% "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
 .vertical-flex {
     display: flex;
@@ -92,6 +95,10 @@ a {
     /*align-items: center;        !* for single line flex container *!*/
     /*align-content: center;      !* for multi-line flex container *!*/
     text-align: center;
+    line-height: 70%;
+}
+.mt{
+    padding-top: 5vh;
 }
 
 .box2 {
@@ -230,6 +237,12 @@ a {
         width: 100%;
         /*padding: 50px 50px 50px 50px;*/
         font: 5vh "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+    .smallText{
+        font: 70% "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+    .box {
+        line-height: 85%;
     }
 
 }
